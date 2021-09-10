@@ -1,4 +1,4 @@
-package com.carlaospa.api.personapi.dto;
+package com.carlaospa.api.personapi.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

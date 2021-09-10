@@ -1,6 +1,6 @@
 package com.carlaospa.api.personapi.controller;
 
-import com.carlaospa.api.personapi.dto.MessageResponseDTO;
+import com.carlaospa.api.personapi.dto.response.MessageResponseDTO;
 import com.carlaospa.api.personapi.dto.request.PersonDTO;
 import com.carlaospa.api.personapi.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;

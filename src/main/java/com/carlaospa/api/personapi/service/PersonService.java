@@ -1,6 +1,6 @@
 package com.carlaospa.api.personapi.service;
 
-import com.carlaospa.api.personapi.dto.MessageResponseDTO;
+import com.carlaospa.api.personapi.dto.response.MessageResponseDTO;
 import com.carlaospa.api.personapi.dto.request.PersonDTO;
 import com.carlaospa.api.personapi.entity.Person;
 import com.carlaospa.api.personapi.mapper.PersonMapper;

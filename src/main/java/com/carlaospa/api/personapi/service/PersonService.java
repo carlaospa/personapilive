@@ -1,8 +1,9 @@
 package com.carlaospa.api.personapi.service;
 
-import com.carlaospa.api.personapi.dto.response.MessageResponseDTO;
 import com.carlaospa.api.personapi.dto.request.PersonDTO;
+import com.carlaospa.api.personapi.dto.response.MessageResponseDTO;
 import com.carlaospa.api.personapi.entity.Person;
+import com.carlaospa.api.personapi.exception.PersonNotFoundException;
 import com.carlaospa.api.personapi.mapper.PersonMapper;
 import com.carlaospa.api.personapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,20 @@ public class PersonService {
        return allPeople.stream()
                .map(personMapper::toDTO)
                .collect(Collectors.toList());
+    }
+
+    public PersonDTO findById(Long id) throws PersonNotFoundException {
+       Person person = verifyIfExists(id);
+       return personMapper.toDTO(person);
+    }
+
+    public void delete(Long id) throws  PersonNotFoundException {
+        verifyIfExists(id);
+        personRepository.deleteById(id);
+    }
+
+    private Person verifyIfExists(Long id) throws PersonNotFoundException{
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PersonNotFoundException(id));
     }
 }

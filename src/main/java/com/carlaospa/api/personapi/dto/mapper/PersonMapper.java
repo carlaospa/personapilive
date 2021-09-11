@@ -1,4 +1,4 @@
-package com.carlaospa.api.personapi.mapper;
+package com.carlaospa.api.personapi.dto.mapper;
 
 
 import com.carlaospa.api.personapi.dto.request.PersonDTO;
@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
 
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);

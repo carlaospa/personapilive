@@ -1,10 +1,10 @@
 package com.carlaospa.api.personapi.service;
 
+import com.carlaospa.api.personapi.dto.mapper.PersonMapper;
 import com.carlaospa.api.personapi.dto.request.PersonDTO;
 import com.carlaospa.api.personapi.dto.response.MessageResponseDTO;
 import com.carlaospa.api.personapi.entity.Person;
 import com.carlaospa.api.personapi.exception.PersonNotFoundException;
-import com.carlaospa.api.personapi.mapper.PersonMapper;
 import com.carlaospa.api.personapi.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class PersonService {
 
     private PersonRepository personRepository;
 
-    private final PersonMapper personMapper = PersonMapper.INSTANCE;
+    private final PersonMapper personMapper;
 
     public MessageResponseDTO createPerson( PersonDTO personDTO){
 
